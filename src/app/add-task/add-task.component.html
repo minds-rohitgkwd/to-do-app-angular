@@ -1,0 +1,52 @@
+<!-- <div class="add-task-div mx-auto border p-3 rounded  ">
+  <form class="" action="" #addtaskform="ngForm" (submit)="addTask(addtaskform.value) ; addtaskform.resetForm();">
+    <div class="mb-3 form-floating">
+      <input type="text" id="floatingInput" name="taskTitle" [(ngModel)]="taskTitle" class="form-control" required
+        placeholder="add title">
+      <label for="floatingInput">Title</label>
+      <span class="error-msg"
+        *ngIf="addtaskform.controls['taskTitle'].hasError('required') && addtaskform.controls['taskTitle'].touched">
+        *this field is required
+      </span>
+    </div>
+    <div class="mb-3 form-floating">
+      <textarea class="form-control" name="taskDesc" style="height: 100px" [(ngModel)]="taskDesc"
+        placeholder="Leave a comment here" rows="3"></textarea>
+      <label for="">Description</label>
+    </div>
+
+
+    <button class="btn " [disabled]="!addtaskform.valid " type="submit" name="addTask"> Add </button>
+
+  </form>
+</div> -->
+
+<!-- ------------------------------------------- -->
+
+<div class="add-task-div mx-auto border p-3 rounded  ">
+  <form class="" action="" [formGroup]="reactiveForm">
+    <div class="mb-3 form-floating">
+      <input type="text" id="floatingInput" formControlName="taskTitle" class="form-control"
+        placeholder="add title">
+      <label for="floatingInput">Title</label>
+      <span class="error-msg"
+        *ngIf="reactiveForm.get('taskTitle')?.hasError('required') && reactiveForm.get('taskTitle')?.touched">
+        *this field is required
+      </span>
+
+    </div>
+    <div class="mb-3 form-floating">
+      <textarea class="form-control" formControlName="taskDesc" style="height: 100px" placeholder="Leave a comment here"
+        rows="3"></textarea>
+      <label for="">Description</label>
+    </div>
+
+
+    <button class="btn " [disabled]="!reactiveForm.valid " type="submit" (click)="submitForm()" name="addTask"> Add
+    </button>
+
+  </form>
+</div>
+
+
+<app-lists [taskData]='taskArray'></app-lists>

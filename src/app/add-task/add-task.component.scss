@@ -1,0 +1,29 @@
+.add-task-div{
+  border: 1px solid gray;
+  width: 40vw;
+  background-color:#d5bdaf
+}
+
+.error-msg{
+color: red;
+font-size:0.8rem
+}
+
+.btn{
+  background-color:#eeebd5;
+  border: none;
+  // color: white;
+}
+
+.btn:hover {
+  background-color:#b76935;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .add-task-div{
+    width: 70vw;
+  }
+}
+
+

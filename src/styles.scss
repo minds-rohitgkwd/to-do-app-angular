@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+.text-marked{
+  text-decoration: line-through;
+}
+
+.text-plain{
+text-decoration: none;
+}
+
+.task-heading{
+  margin: 10px 50px;
+  color: #dfa970;
+  font-weight: 700;
+  font-family: 'montserrat', sans-serif;
+  letter-spacing:1px
+}
+

@@ -1,0 +1,28 @@
+
+<h3 class="task-heading"> ALL TASKS </h3>
+
+<div class="mt-5 mx-auto lists-div p-md-5">
+
+  <div class="all-lists ">
+    <div class="card  mx-auto">
+      <div class="card-body row d-flex align-items-center" *ngFor="let item of taskData" id="check">
+
+        <div class="col">
+          <div *ngIf="item['isDone'] ==='true'; then checkSolid ; else checkPlain"></div>
+          <ng-template #checkSolid> <i class="fa-solid fa-square-check" disabled></i></ng-template>
+          <ng-template #checkPlain> <i class="fa-regular fa-square-check"></i></ng-template>
+        </div>
+        <div class="col-8 " [ngClass]="item['isDone'] ==='true'? 'text-marked': 'text-plain' ">
+          <h5 class="card-title">{{item['taskTitle']}}</h5>
+          <p class="card-text">{{item['taskDesc']}}</p>
+        </div>
+        <div class="col-2 d-flex justify-content-evenly flex-wrap align-items-center">
+          <i class="fa-regular fa-pen-to-square m-3" disabled></i>
+          <i class="fa-solid fa-trash" disabled></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
